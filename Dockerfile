@@ -1,7 +1,9 @@
 FROM ubuntu:18.04
 LABEL maintainer "jim@baldw.in"
 
-RUN apt-get install dialog apt-utils -y
+# install apt-utils 'cuz node install seems to barf without it
+RUN apt-get update
+RUN apt-get install -y apt-utils
 
 # install aws cli
 RUN apt-get update
