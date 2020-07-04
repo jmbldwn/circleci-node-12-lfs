@@ -7,9 +7,9 @@ RUN apt-get update
 RUN apt-get install -y nodejs
 
 # install aws cli
-apt-get update
-apt-get install -y awscli
-aws --version
+RUN apt-get update
+RUN apt-get install -y awscli
+RUN aws --version
 
 # install git lfs
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
