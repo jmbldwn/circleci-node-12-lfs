@@ -22,4 +22,6 @@ RUN apt-get install -y git-lfs
 RUN git lfs install
 
 # install build tools
-RUN apt-get install -y build-essential 
+RUN apt-get install -y build-essential gcc-8 g++-8 python python-pip curl openssl libssl-dev certbot nginx
+RUN unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-8 /usr/bin/gcc
+
