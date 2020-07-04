@@ -2,6 +2,7 @@ FROM ubuntu:18.04
 LABEL maintainer "jim@baldw.in"
 
 # install apt-utils 'cuz node install seems to barf without it
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 RUN apt-get update
 RUN apt-get install -y apt-utils
 
